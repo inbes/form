@@ -1,137 +1,668 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Proposal by ALUSINDO</title>
-<style>
-:root{--ink:#17191c;--muted:#687078;--gold:#bd9654;--cream:#f6f3ed;--line:#e7e2d9;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.6}
-a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}.top{background:#111;color:#fff;padding:13px 0;font-size:13px;letter-spacing:.12em}.top .wrap{display:flex;justify-content:space-between;gap:15px;align-items:center}.brand{font-weight:800;letter-spacing:.18em}.brand span{color:var(--gold)}.hero{background:linear-gradient(90deg,rgba(12,14,16,.82),rgba(12,14,16,.24)),url('GANTI_DENGAN_URL_BLOGSPOT_FACADE');background-size:cover;background-position:center 42%;color:white;padding:92px 0 82px}.eyebrow{color:#e3c58f;letter-spacing:.22em;font-size:12px;font-weight:700}.hero h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(38px,6vw,70px);line-height:1.05;max-width:720px;margin:18px 0}.hero p{max-width:600px;color:#e5e5e5;font-size:17px}.btn{display:inline-block;border:0;background:var(--gold);color:#151515;text-decoration:none;padding:15px 23px;font-weight:800;letter-spacing:.04em;border-radius:3px;cursor:pointer}.btn.dark{background:#17191c;color:#fff}.hero .btn{margin-top:18px}.section{padding:74px 0}.section.soft{background:var(--cream)}.kicker{font-size:11px;color:#9b783f;letter-spacing:.2em;font-weight:800}.heading{font:500 clamp(30px,4vw,45px)/1.15 Georgia,serif;margin:10px 0 14px}.lead{color:var(--muted);max-width:720px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.visual{border:1px solid var(--line);background:#fff}.visual img{width:100%;min-height:220px;display:block;object-fit:contain;max-height:540px;background:#f0eee9}.visual .cap{padding:15px 18px}.cap b{display:block}.cap small{color:var(--muted)}.featuregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.feature{background:#fff;border:1px solid var(--line);padding:22px}.num{font:28px Georgia;color:var(--gold)}.feature h3{margin:8px 0}.feature p{margin:0;color:var(--muted);font-size:14px}.floor{display:grid;grid-template-columns:130px 1fr;gap:20px;border-top:1px solid var(--line);padding:19px 0}.floor strong{color:#9b783f;letter-spacing:.08em}.floor p{margin:0;color:var(--muted)}.pricebox{background:#17191c;color:#fff;padding:36px;border-radius:4px;display:grid;grid-template-columns:1.3fr .7fr;gap:25px;align-items:center}.price{font:500 clamp(34px,5vw,54px) Georgia;color:#e6c78f}.pricebox p{color:#d2d2d2}.pricebox ul{padding-left:19px;color:#eee}.formwrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:34px;align-items:start}.formintro{position:sticky;top:20px}.formcard{background:#fff;border:1px solid var(--line);padding:28px}.formcard h3{font:26px Georgia;margin:0 0 5px}.formcard .sub{color:var(--muted);font-size:14px;margin:0 0 22px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:13px;font-weight:700}input,select,textarea{width:100%;padding:12px;border:1px solid #d9d6cf;border-radius:3px;font:inherit;background:#fff;color:#222}textarea{min-height:90px;resize:vertical}.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#555;margin:18px 0}.check input{width:auto;margin-top:4px}.proposal{border:1px solid var(--line);padding:25px;margin-top:25px;background:#faf9f6}.proposal h4{margin:0 0 12px;font:23px Georgia}.proposal-row{display:flex;justify-content:space-between;gap:15px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}.proposal-total{font-weight:800;font-size:18px;padding-top:14px}.notice{font-size:12px;color:#777;margin-top:12px}.footer{background:#111;color:#bbb;padding:35px 0;font-size:13px}.footer b{color:#fff}.success{display:none;margin-top:18px;padding:16px;background:#edf6ef;border:1px solid #b9d7bf;color:#1c5a2a}.pill{display:inline-block;padding:5px 9px;background:#f0e6d5;color:#77551e;font-size:11px;font-weight:800;letter-spacing:.08em}
-@media(max-width:760px){.hero{padding:70px 0}.grid,.featuregrid,.formwrap,.pricebox{grid-template-columns:1fr}.formintro{position:static}.fields{grid-template-columns:1fr}.floor{grid-template-columns:1fr;gap:4px}.section{padding:52px 0}.top .wrap{font-size:10px}.pricebox{padding:25px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Proposal by ALUSINDO | IBES STORE</title>
+  <style>
+    :root {
+      --ink: #17191c;
+      --muted: #687078;
+      --gold: #bd9654;
+      --cream: #f6f3ed;
+      --line: #e7e2d9;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .top {
+      background: #111;
+      color: #fff;
+      padding: 13px 0;
+      font-size: 13px;
+      letter-spacing: .12em;
+    }
+
+    .top .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(90deg, rgba(12, 14, 16, .84), rgba(12, 14, 16, .28)),
+        url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7nM8U8Werzqw85GtflClRt73aBc5PVTB75MO1GzRoUJGfL8LQPq5sPf_BjvFoPIXa3fNXqjnJOK_3TDkHBmqOWqClQlEs13zHAKUyNtIXMD_Y1_07yvg6zmVNjhpsxxp8-XA7AIW_p9C5npYYak3CuJqQ5mAoGe3Hm__bWIOL_eHn3d5Ckb_QelFRPiY/s1600/Elegant%20Modern-Classic%20House%20at%20Dusk.png');
+      background-size: cover;
+      background-position: center 42%;
+      color: white;
+      padding: 92px 0 82px;
+    }
+
+    .eyebrow {
+      color: #e3c58f;
+      letter-spacing: .22em;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 1.05;
+      max-width: 720px;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #e5e5e5;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      background: var(--gold);
+      color: #151515;
+      text-decoration: none;
+      padding: 15px 23px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover {
+      opacity: .92;
+      transform: translateY(-1px);
+    }
+
+    /* Wrapper & Efek Harga Coret Silang (X Merah) */
+    .hero-offer {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 22px;
+      background: rgba(23, 25, 28, 0.82);
+      border: 1px solid rgba(189, 150, 84, 0.45);
+      backdrop-filter: blur(6px);
+      padding: 16px 20px;
+      border-radius: 6px;
+    }
+
+    .offer-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .offer-badge {
+      background: #c93b2b;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      padding: 4px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    .strike-box {
+      position: relative;
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1px dashed rgba(255, 255, 255, 0.35);
+      border-radius: 4px;
+      color: #b5b5b5;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+
+    .strike-box::before,
+    .strike-box::after {
+      content: "";
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      top: 50%;
+      height: 2.5px;
+      background: #ff473d;
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    }
+
+    .strike-box::before {
+      transform: translateY(-50%) rotate(-9deg);
+    }
+
+    .strike-box::after {
+      transform: translateY(-50%) rotate(9deg);
+    }
+
+    .strike-box.light {
+      border-color: rgba(23, 25, 28, 0.3);
+      color: #777;
+      font-size: 13px;
+      padding: 2px 8px;
+    }
+
+    .hero-offer .btn {
+      margin-top: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 17px;
+      box-shadow: 0 8px 20px rgba(189, 150, 84, 0.25);
+    }
+
+    .section {
+      padding: 74px 0;
+    }
+
+    .section.soft {
+      background: var(--cream);
+    }
+
+    .kicker {
+      font-size: 11px;
+      color: #9b783f;
+      letter-spacing: .2em;
+      font-weight: 800;
+    }
+
+    .heading {
+      font: 500 clamp(30px, 4vw, 45px)/1.15 Georgia, serif;
+      margin: 10px 0 14px;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .visual {
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .visual img {
+      width: 100%;
+      min-height: 220px;
+      display: block;
+      object-fit: contain;
+      max-height: 540px;
+      background: #f0eee9;
+    }
+
+    .visual .cap {
+      padding: 15px 18px;
+    }
+
+    .cap b {
+      display: block;
+    }
+
+    .cap small {
+      color: var(--muted);
+    }
+
+    .floor {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding: 19px 0;
+    }
+
+    .floor strong {
+      color: #9b783f;
+      letter-spacing: .08em;
+    }
+
+    .floor p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .pricebox {
+      background: #17191c;
+      color: #fff;
+      padding: 36px;
+      border-radius: 4px;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .price {
+      font: 500 clamp(34px, 5vw, 54px)/1.1 Georgia, serif;
+      color: #e6c78f;
+      margin-top: 8px;
+    }
+
+    .pricebox p {
+      color: #d2d2d2;
+    }
+
+    .pricebox ul {
+      padding-left: 19px;
+      color: #eee;
+    }
+
+    /* Styling Bagian Persiapan Data Checkout & Ringkasan Paket */
+    .checkout-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .info-card {
+      background: #faf9f6;
+      border: 1px solid var(--line);
+      padding: 28px;
+      border-radius: 4px;
+    }
+
+    .info-card h3 {
+      font: 24px Georgia, serif;
+      margin: 0 0 10px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #9b783f;
+      font-weight: 800;
+    }
+
+    .pdf-bonus {
+      margin-top: 20px;
+      padding: 16px;
+      background: #fff;
+      border-left: 4px solid var(--gold);
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pdf-bonus b {
+      display: block;
+      font-size: 14px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .pdf-bonus span {
+      font-size: 13px;
+      color: var(--muted);
+      display: block;
+    }
+
+    .proposal-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 28px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .proposal-card h4 {
+      margin: 0 0 14px;
+      font: 24px Georgia, serif;
+    }
+
+    .proposal-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .proposal-total {
+      font-weight: 800;
+      font-size: 18px;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .pay-methods {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 14px 0;
+      padding: 10px;
+      background: var(--cream);
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    .notice {
+      font-size: 12px;
+      color: #777;
+      margin-top: 12px;
+    }
+
+    .footer {
+      background: #111;
+      color: #bbb;
+      padding: 35px 0;
+      font-size: 13px;
+    }
+
+    .footer b {
+      color: #fff;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 5px 9px;
+      background: #f0e6d5;
+      color: #77551e;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 70px 0;
+      }
+
+      .grid,
+      .pricebox,
+      .checkout-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .floor {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .top .wrap {
+        font-size: 10px;
+      }
+
+      .pricebox {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="top"><div class="wrap"><div class="brand">ALUSINDO<span></span></div><div>ARCHITECTURE • DESIGN • BUILD</div></div></div>
-<header class="hero" style="background-image:linear-gradient(90deg,rgba(12,14,16,.82),rgba(12,14,16,.24)),url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7nM8U8Werzqw85GtflClRt73aBc5PVTB75MO1GzRoUJGfL8LQPq5sPf_BjvFoPIXa3fNXqjnJOK_3TDkHBmqOWqClQlEs13zHAKUyNtIXMD_Y1_07yvg6zmVNjhpsxxp8-XA7AIW_p9C5npYYak3CuJqQ5mAoGe3Hm__bWIOL_eHn3d5Ckb_QelFRPiY/s1600/Elegant%20Modern-Classic%20House%20at%20Dusk.png');"><div class="wrap">
-<div class="eyebrow">PROPOSAL PENAWARAN JASA PERENCANAAN DESAIN BANGUNAN</div>
-<h1>Wujudkan Rumah Impian Dimulai dari Perencanaan yang Tepat.</h1>
-<p>Wujudkan rumah impian anda, Dimulai dari desain yang matang, bukan sekadar membangun, Penawaran khusus perencanaan desain bangunan</p>
-<a class="btn" href="#form">Rp.2.000.000,00 →</a>
-</div></header>
 
-<section class="section"><div class="wrap">
-<div class="kicker">1. PEMBUKAAN PROPOSAL</div><h2 class="heading">Lihat Potensi Rumah Anda Sebelum Dibangun.</h2>
-<p>Pernahkah Anda membayangkan memiliki rumah yang bukan hanya terlihat mewah dari luar, tetapi juga memiliki desain yang nyaman, fungsional, dan sesuai dengan karakter keluarga Anda?</p>
-<p>Kami percaya bahwa membangun rumah impian tidak seharusnya dimulai dengan terburu-buru melakukan pembangunan.</p>
+  <div class="top">
+    <div class="wrap">
+      <div class="brand">ALUSINDO<span></span></div>
+      <div>ARCHITECTURE • DESIGN • BUILD</div>
+    </div>
+  </div>
 
-<p>Semuanya harus dimulai dari sebuah perencanaan desain yang tepat. Karena kesalahan dalam menentukan desain sejak awal dapat berdampak pada perubahan pekerjaan, pembengkakan biaya, hingga hasil bangunan yang tidak sesuai harapan.</p>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">PROPOSAL PENAWARAN JASA PERENCANAAN DESAIN BANGUNAN</div>
+      <h1>Wujudkan Rumah Impian Dimulai dari Perencanaan yang Tepat.</h1>
+      <p>Wujudkan rumah impian Anda. Dimulai dari desain yang matang, bukan sekadar membangun. Penawaran khusus perencanaan desain bangunan.</p>
 
-<p>Oleh karena itu, kami menghadirkan layanan perencanaan desain bangunan untuk membantu Anda memvisualisasikan rumah impian sebelum proses pembangunan dimulai.</p>
-    <section class="section"><div class="wrap">
-<div class="kicker">2. DESAIN ANDA</div><h2 class="heading">Apa Yang Anda Dapatkan ?</h2>
-<div class="grid" style="margin-top:28px">
-<div class="visual"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3HCLHEy57uCL7F-ouHyuZD8IEFygXKNvx7Mw9jZI4IV1KOza3IJ3Dff4lEX2Nqf58UICJsIQiPsLU5O8kEgQ_1OOCnTFtVwwl-uMvIyIQSkLPiujDkebZ0xWREPHywpFFEfWOG3Pjmb8l7BDIfXkSShSHUomie7IT28mx8BeAGOEh0bZmcp5FVMVq3pY/s1600/Dusk%20Facades_%20Modern%20and%20Classic%20Homes.png" alt="Contoh visual 3D facade rumah modern"><div class="cap"><b>01 · Gambar 3D Fasad</b><small>Visualisasi tampilan depan bangunan secara realistis agar Anda dapat melihat gambaran rumah impian sebelum dibangun.</small></div></div>
-<div class="visual"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMQH0pvQnt5NR32aPnui0nPraxpfQNNshENZY22jSTINNIxE_-UAm81MEzPoL1l4P6TXpTOG3KZpE2DyLcdEq7tQOO07eRrG5fKHbhQqKJhHkyVC8vTSCE7Bh8stNyO2iTr5UXvCZMCjDrpG1CrOyAiz1NlHBQB0IL1cYGJBxqhMJQ8WOHLwJcWybTWFw/s1600/Denah%20Per%20lantai.jpg" alt="Contoh denah perlantai"><div class="cap"><b>02 · Gambar Desain Bangunan</b><small>Perencanaan gambar desain sebagai dasar visual dan konsep bangunan sesuai kebutuhan dan keinginan Anda.</small></div></div>
-<div class="visual"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9YYWX5I6ABr-5xpnZdaIHUvjXjvoYpbB8ickKgfiJFkLqBwwbgy-e7srdSBvyj6R2ZVotyCVhc7h4OC03u7orDarDsvayjrK8kLAVzQXSY-ZhZ2P4vMhSm8nHTcA2O9NcHbBaOu8a0hKsphNWD5olO8vtUniOdIQNjzD_EUhmcKANPSlW0-X0p5CtZP8/s1600/Spreadsheet%20Cost%20Estimate%20Table%20with%20Blank%20Pricing%20Columns.png" alt="Contoh denah lantai dua"><div class="cap"><b>03 · RAB File</b><small>Estimasi anggaran pekerjaan berdasarkan desain dan spesifikasi yang disepakati sebagai acuan awal perencanaan biaya pembangunan</small></div></div>
-<div class="visual"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguaxlfwBGrcgJdICXHmwnyA_zlIkrqOgAJZ9JrWlF0o12ya1EqjKXJ8WmWkDDYrghBvGm5sXnpaa840UWO_NXAbo5ow-Gk9LemHtEsEu2HOSb1IquFi411qxkHj3_QCFdfLjpaMzp4Qe_Lli1CzV3HErQIiKudR9tRuUMJvP8w7WX2SCPNl-DA4Z1vYzE/s1600/Elegant%20Mansion%203D%20Animasi%20Promo.png" alt="3D animasi"><div class="cap"><b>04 · Animasi 3D Fasad</b><small>Visualisasi fasad dalam bentuk animasi sehingga Anda dapat melihat tampilan desain bangunan dari berbagai sudut pandang.</small></div></div>
-</div></div></section>
+      <div class="hero-offer">
+        <div class="offer-top">
+          <span class="offer-badge">PROMO TERBATAS</span>
+          <span class="strike-box">Rp 5.000.000,00</span>
+        </div>
+        <a class="btn" href="#proposal-card">Rp 2.000.000,00→</a>
+      </div>
+    </div>
+  </header>
 
-<section class="section soft"><div class="wrap">
-<div class="kicker">3. Q & A</div><h2 class="heading">Mengapa harus merencanakan desain terlebih dahulu? </h2>
-<p class="lead">Ada satu hal yang perlu Anda pahami:</p>
-<p>Rumah yang mahal belum tentu dirancang dengan baik. Rumah yang baik bukan hanya tentang material mahal atau tampilan yang megah.
+  <!-- SECTION 1 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="kicker">1. PEMBUKAAN PROPOSAL</div>
+      <h2 class="heading">Lihat Potensi Rumah Anda Sebelum Dibangun.</h2>
+      <p>Pernahkah Anda membayangkan memiliki rumah yang bukan hanya terlihat mewah dari luar, tetapi juga memiliki desain yang nyaman, fungsional, dan sesuai dengan karakter keluarga Anda?</p>
+      <p>Kami percaya bahwa membangun rumah impian tidak seharusnya dimulai dengan terburu-buru melakukan pembangunan.</p>
+      <p>Semuanya harus dimulai dari sebuah perencanaan desain yang tepat. Karena kesalahan dalam menentukan desain sejak awal dapat berdampak pada perubahan pekerjaan, pembengkakan biaya, hingga hasil bangunan yang tidak sesuai harapan.</p>
+      <p>Oleh karena itu, kami menghadirkan layanan perencanaan desain bangunan untuk membantu Anda memvisualisasikan rumah impian sebelum proses pembangunan dimulai.</p>
+    </div>
+  </section>
 
-Namun, bagaimana setiap ruang direncanakan, bagaimana sirkulasi udara bekerja, bagaimana pencahayaan alami masuk, serta bagaimana tampilan bangunan mencerminkan karakter pemiliknya.
+  <!-- SECTION 2 -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="kicker">2. DESAIN ANDA</div>
+      <h2 class="heading">Apa Yang Anda Dapatkan?</h2>
+      <div class="grid" style="margin-top:28px">
+        <div class="visual">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3HCLHEy57uCL7F-ouHyuZD8IEFygXKNvx7Mw9jZI4IV1KOza3IJ3Dff4lEX2Nqf58UICJsIQiPsLU5O8kEgQ_1OOCnTFtVwwl-uMvIyIQSkLPiujDkebZ0xWREPHywpFFEfWOG3Pjmb8l7BDIfXkSShSHUomie7IT28mx8BeAGOEh0bZmcp5FVMVq3pY/s1600/Dusk%20Facades_%20Modern%20and%20Classic%20Homes.png" alt="Contoh visual 3D facade rumah modern">
+          <div class="cap">
+            <b>01 · Gambar 3D Fasad</b>
+            <small>Visualisasi tampilan depan bangunan secara realistis agar Anda dapat melihat gambaran rumah impian sebelum dibangun.</small>
+          </div>
+        </div>
+        <div class="visual">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMQH0pvQnt5NR32aPnui0nPraxpfQNNshENZY22jSTINNIxE_-UAm81MEzPoL1l4P6TXpTOG3KZpE2DyLcdEq7tQOO07eRrG5fKHbhQqKJhHkyVC8vTSCE7Bh8stNyO2iTr5UXvCZMCjDrpG1CrOyAiz1NlHBQB0IL1cYGJBxqhMJQ8WOHLwJcWybTWFw/s1600/Denah%20Per%20lantai.jpg" alt="Contoh denah perlantai">
+          <div class="cap">
+            <b>02 · Gambar Desain Bangunan</b>
+            <small>Perencanaan gambar desain sebagai dasar visual dan konsep bangunan sesuai kebutuhan dan keinginan Anda.</small>
+          </div>
+        </div>
+        <div class="visual">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9YYWX5I6ABr-5xpnZdaIHUvjXjvoYpbB8ickKgfiJFkLqBwwbgy-e7srdSBvyj6R2ZVotyCVhc7h4OC03u7orDarDsvayjrK8kLAVzQXSY-ZhZ2P4vMhSm8nHTcA2O9NcHbBaOu8a0hKsphNWD5olO8vtUniOdIQNjzD_EUhmcKANPSlW0-X0p5CtZP8/s1600/Spreadsheet%20Cost%20Estimate%20Table%20with%20Blank%20Pricing%20Columns.png" alt="Contoh RAB File">
+          <div class="cap">
+            <b>03 · RAB File</b>
+            <small>Estimasi anggaran pekerjaan berdasarkan desain dan spesifikasi yang disepakati sebagai acuan awal perencanaan biaya pembangunan.</small>
+          </div>
+        </div>
+        <div class="visual">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguaxlfwBGrcgJdICXHmwnyA_zlIkrqOgAJZ9JrWlF0o12ya1EqjKXJ8WmWkDDYrghBvGm5sXnpaa840UWO_NXAbo5ow-Gk9LemHtEsEu2HOSb1IquFi411qxkHj3_QCFdfLjpaMzp4Qe_Lli1CzV3HErQIiKudR9tRuUMJvP8w7WX2SCPNl-DA4Z1vYzE/s1600/Elegant%20Mansion%203D%20Animasi%20Promo.png" alt="3D animasi">
+          <div class="cap">
+            <b>04 · Animasi 3D Fasad</b>
+            <small>Visualisasi fasad dalam bentuk animasi sehingga Anda dapat melihat tampilan desain bangunan dari berbagai sudut pandang.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-Dengan perencanaan desain yang tepat, Anda memiliki gambaran lebih jelas sebelum mengambil keputusan pembangunan. Contohnya di bawah ini  :</p>
-<div style="margin-top:22px">
-<div class="floor"><strong>01 / DATA LAHAN</strong><p>Lokasi, ukuran tanah, bentuk lahan, kondisi sekitar, dan foto lokasi bila tersedia.</p></div>
-<div class="floor"><strong>02 / KEBUTUHAN RUANG</strong><p>Jumlah lantai, kamar tidur, kamar mandi, area keluarga, parkir, ruang usaha, atau fasilitas khusus.</p></div>
-<div class="floor"><strong>03 / GAYA DESAIN</strong><p>Referensi arsitektur, pilihan material, karakter facade, dan suasana yang diinginkan.</p></div>
-<div class="floor"><strong>04 / ANGGARAN & TARGET</strong><p>Estimasi anggaran pembangunan dan target waktu perencanaan.</p></div>
-</div></div></section>
-<section class="section soft"><div class="wrap">
-<div class="pricebox"><div><span class="pill">4. AMANKAN DESAIN ANDA</span><h2 class="heading" style="color:#fff">Biaya Paket Perencanaan</h2>
-<p>Jangan biarkan rumah impian Anda hanya menjadi gambaran di dalam pikiran.
+  <!-- SECTION 3 -->
+  <section class="section soft">
+    <div class="wrap">
+      <div class="kicker">3. Q & A</div>
+      <h2 class="heading">Mengapa harus merencanakan desain terlebih dahulu?</h2>
+      <p class="lead">Ada satu hal yang perlu Anda pahami:</p>
+      <p>Rumah yang mahal belum tentu dirancang dengan baik. Rumah yang baik bukan hanya tentang material mahal atau tampilan yang megah.</p>
+      <p>Namun, bagaimana setiap ruang direncanakan, bagaimana sirkulasi udara bekerja, bagaimana pencahayaan alami masuk, serta bagaimana tampilan bangunan mencerminkan karakter pemiliknya.</p>
+      <p>Dengan perencanaan desain yang tepat, Anda memiliki gambaran lebih jelas sebelum mengambil keputusan pembangunan. Data awal yang dibutuhkan di antaranya:</p>
+      <div style="margin-top:22px">
+        <div class="floor"><strong>01 / DATA LAHAN</strong><p>Lokasi, ukuran tanah, bentuk lahan, kondisi sekitar, dan foto lokasi bila tersedia.</p></div>
+        <div class="floor"><strong>02 / KEBUTUHAN RUANG</strong><p>Jumlah lantai, kamar tidur, kamar mandi, area keluarga, parkir, ruang usaha, atau fasilitas khusus.</p></div>
+        <div class="floor"><strong>03 / GAYA DESAIN</strong><p>Referensi arsitektur, pilihan material, karakter facade, dan suasana yang diinginkan.</p></div>
+        <div class="floor"><strong>04 / ANGGARAN & TARGET</strong><p>Estimasi anggaran pembangunan dan target waktu perencanaan.</p></div>
+      </div>
+    </div>
+  </section>
 
-Mari kita wujudkan melalui perencanaan desain yang matang dan profesional.</p>
+  <!-- SECTION 4 -->
+  <section class="section soft" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="pricebox">
+        <div>
+          <span class="pill">4. AMANKAN DESAIN ANDA</span>
+          <h2 class="heading" style="color:#fff">Biaya Paket Perencanaan</h2>
+          <p>Jangan biarkan rumah impian Anda hanya menjadi gambaran di dalam pikiran. Mari kita wujudkan melalui perencanaan desain yang matang dan profesional.</p>
+          <h3 style="font: 500 24px Georgia, serif; color:#fff; margin: 20px 0 10px;">Dapatkan semua ini:</h3>
+          <ul>
+            <li>Visual 3D facade</li>
+            <li>Visual 3D animation</li>
+            <li>Denah per lantai</li>
+            <li>RAB (Rencana Anggaran Biaya)</li>
+            <li>Diskusi kebutuhan dan konsep desain</li>
+            <li><b>Bonus File PDF Panduan Konsultasi Awal</b></li>
+          </ul>
+        </div>
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:4px;">
+            <span class="offer-badge">HEMAT 3 JUTA</span>
+            <span class="strike-box" style="font-size: 20px;">Rp 5.000.000</span>
+          </div>
+          <div class="price">Rp2.000.000</div>
+          <p>Anda sudah dapat memulai langkah pertama untuk melihat seperti apa gambaran rumah impian Anda sebelum dibangun.</p>
+          <!-- Mengarah ke bagian bawah (#checkout) -->
+          <a class="btn" href="#proposal-card">RENCANAKAN BANGUNAN ANDA→</a>
+        </div>
+      </div>
 
-<h2 class="heading" style="color:#fff">Dapatkan semua ini :</h2>
-<ul><li>Visual 3D facade</li><li>Visual 3D animation</li><li>Denah per lantai</li><li>RAB (Rencana Anggaran Biaya)</li><li>Diskusi kebutuhan dan konsep desain</li></ul></div>
-<div><div class="price">Rp2.000.000</div><p>Anda sudah dapat memulai langkah pertama untuk melihat seperti apa gambaran rumah impian Anda sebelum dibangun.</p><a class="btn" href="#form">ISI FORM & SETUJUI PENAWARAN</a></div></div>
-<p class="notice">Ruang lingkup final, format file, jumlah revisi, jadwal pengerjaan, dan ketentuan pembayaran akan dikonfirmasi tertulis oleh tim sebelum pekerjaan dimulai. Paket ini mencakup RAB sebagai estimasi biaya berdasarkan desain dan spesifikasi yang disepakati. RAB merupakan acuan perencanaan awal dan dapat disesuaikan setelah verifikasi kondisi lapangan, pilihan material, serta harga aktual.</p>
-<div style="margin-top:24px;background:#fff;border:1px solid var(--line);padding:24px">
-<div class="kicker">SITE SURVEY POLICY</div>
-<h3 style="font:26px Georgia;margin:8px 0 12px">Ketentuan Biaya Survey Lokasi</h3>
-<div class="floor"><strong>JAKARTA & TANGERANG</strong><p><b>FREE / GRATIS.</b> Biaya survey lokasi tidak dikenakan biaya untuk area Jakarta dan Tangerang.</p></div>
-<div class="floor"><strong>AREA LAINNYA</strong><p>Biaya survey akan diinformasikan berdasarkan jarak, akses lokasi, dan kebutuhan perjalanan. Tim Alusindo akan melakukan konfirmasi terlebih dahulu sebelum survey dijadwalkan.</p></div>
-<div class="floor"><strong>LUAR KOTA / LUAR PULAU</strong><p>Biaya perjalanan dan kebutuhan survey di luar kota atau luar pulau menjadi tanggung jawab konsumen, berdasarkan estimasi biaya yang disepakati terlebih dahulu.</p></div>
-<p class="notice">Survey hanya dijadwalkan setelah lokasi, waktu, dan ketentuan biayanya dikonfirmasi bersama konsumen.</p>
-</div>
-</div></section>
+      <p class="notice">Ruang lingkup final, format file, jumlah revisi, jadwal pengerjaan, dan ketentuan pembayaran akan dikonfirmasi tertulis oleh tim sebelum pekerjaan dimulai. Paket ini mencakup RAB sebagai estimasi biaya berdasarkan desain dan spesifikasi yang disepakati. RAB merupakan acuan perencanaan awal dan dapat disesuaikan setelah verifikasi kondisi lapangan, pilihan material, serta harga aktual.</p>
 
-<section class="section" id="form"><div class="wrap formwrap">
-<div class="formintro"><div class="kicker">LET'S START YOUR PROJECT</div><h2 class="heading">Ceritakan Rencana Bangunan Anda.</h2><p class="lead">Isi formulir singkat ini agar tim kami dapat memahami kebutuhan awal Anda dan menyiapkan tindak lanjut penawaran.</p><p><b>IBES STORE by ALUSINDO</b><br><span style="color:#777">Your Inspiration, Our Design.</span></p></div>
-<div class="formcard"><h3>Formulir Konsultasi & Persetujuan</h3><p class="sub">Lengkapi informasi berikut. Kolom bertanda * wajib diisi.</p>
-<form id="leadForm">
-<div class="fields">
-<div class="field"><label>Nama lengkap *</label><input required name="nama" placeholder="Nama Anda"></div>
-<div class="field"><label>Nomor WhatsApp *</label><input required name="wa" type="tel" placeholder="08xxxxxxxxxx"></div>
-<div class="field"><label>Email</label><input name="email" type="email" placeholder="nama@email.com"></div>
-<div class="field"><label>Lokasi proyek *</label><input required name="lokasi" placeholder="Kota / Kabupaten"></div>
-<div class="field"><label>Jenis bangunan *</label><select required name="jenis"><option value="">Pilih jenis bangunan</option><option>Rumah tinggal</option><option>Rumah kos</option><option>Ruko / bangunan usaha</option><option>Bangunan lainnya</option></select></div>
-<div class="field"><label>Rencana jumlah lantai *</label><select required name="lantai"><option value="">Pilih jumlah lantai</option><option>1 lantai</option><option>2 lantai</option><option>3 lantai</option><option>4 lantai atau lebih</option><option>Belum ditentukan</option></select></div>
-<div class="field"><label>Ukuran tanah (perkiraan)</label><input name="tanah" placeholder="Contoh: 8 x 15 meter"></div>
-<div class="field"><label>Estimasi anggaran pembangunan</label><select name="budget"><option value="">Pilih kisaran</option><option>Di bawah Rp500 juta</option><option>Rp500 juta – Rp1 miliar</option><option>Rp1 – 2 miliar</option><option>Rp2 – 5 miliar</option><option>Di atas Rp5 miliar</option><option>Belum ditentukan</option></select></div>
-<div class="field full"><label>Ruangan / fasilitas yang dibutuhkan</label><textarea name="ruang" placeholder="Contoh: 4 kamar tidur, 3 kamar mandi, carport, ruang keluarga, rooftop..."></textarea></div>
-<div class="field full"><label>Gaya desain yang disukai</label><select name="gaya"><option value="">Pilih atau belum ditentukan</option><option>Modern minimalis</option><option>Modern contemporary</option><option>Modern classic</option><option>American classic</option><option>Tropis modern</option><option>Lainnya / perlu konsultasi</option></select></div>
-<div class="field full"><label>Ceritakan kebutuhan khusus atau referensi desain</label><textarea name="catatan" placeholder="Tuliskan ide, kebutuhan, atau tautan referensi jika ada."></textarea></div>
-</div>
-<div class="proposal"><h4>Ringkasan Penawaran</h4>
-<div class="proposal-row"><span>3D Facade</span><b>Termasuk</b></div>
-<div class="proposal-row"><span>3D Animation</span><b>Termasuk</b></div>
-<div class="proposal-row"><span>Denah per lantai</span><b>Termasuk</b></div>
-<div class="proposal-row"><span>RAB (Rencana Anggaran Biaya)</span><b>Termasuk</b></div>
-<div class="proposal-total" style="display:flex;justify-content:space-between;gap:15px"><span>Total biaya paket</span><span>Rp2.000.000</span></div>
-<p class="notice">Dengan mencentang persetujuan, Anda menyatakan telah membaca ringkasan paket dan bersedia dihubungi tim Alusindo untuk konfirmasi ruang lingkup, jadwal, serta instruksi pembayaran. Persetujuan ini belum menjadi bukti pembayaran dan pekerjaan dimulai setelah ketentuan serta pembayaran dikonfirmasi.</p>
-</div>
-<label class="check"><input type="checkbox" id="agree" required><span>Saya telah membaca dan menyetujui penawaran paket 3D Facade, 3D Animation, denah per lantai, dan RAB dengan biaya Rp2.000.000. Saya juga memahami ketentuan biaya survey: gratis untuk Jakarta dan Tangerang; area lain berdasarkan jarak; serta biaya survey luar kota/luar pulau ditanggung konsumen setelah dikonfirmasi.</span></label>
-<button class="btn dark" type="submit" style="width:100%">KIRIM DATA & PERSETUJUAN →</button>
-<div class="success" id="success"></div>
-</form>
-</div></div></section>
-<footer class="footer"><div class="wrap"><b>IBES STORE by ALUSINDO</b><br>Architecture • Design • Build<br><span>Halaman penawaran digital · Silakan hubungi tim Alusindo untuk konfirmasi resmi.</span></div></footer>
-<script>
-document.getElementById('leadForm').addEventListener('submit',function(e){
- e.preventDefault();
- const f=new FormData(this);
- const lines=[
- 'FORM KONSULTASI & PERSETUJUAN DESAIN ALUSINDO',
- 'Nama: '+(f.get('nama')||'-'),
- 'WhatsApp: '+(f.get('wa')||'-'),
- 'Email: '+(f.get('email')||'-'),
- 'Lokasi proyek: '+(f.get('lokasi')||'-'),
- 'Jenis bangunan: '+(f.get('jenis')||'-'),
- 'Jumlah lantai: '+(f.get('lantai')||'-'),
- 'Ukuran tanah: '+(f.get('tanah')||'-'),
- 'Anggaran: '+(f.get('budget')||'-'),
- 'Kebutuhan ruang: '+(f.get('ruang')||'-'),
- 'Gaya desain: '+(f.get('gaya')||'-'),
- 'Catatan: '+(f.get('catatan')||'-'),
- 'Paket: 3D Facade + 3D Animation + Denah per lantai + RAB',
- 'Harga: Rp2.000.000',
- 'Survey: Gratis Jakarta & Tangerang; area lain berdasarkan jarak; luar kota/luar pulau ditanggung konsumen sesuai konfirmasi biaya',
- 'Status: Menyetujui penawaran awal; menunggu konfirmasi ruang lingkup dan pembayaran.'
- ];
- const msg=lines.join('\n');
- const box=document.getElementById('success');
- box.style.display='block';
- box.innerHTML='<b>Data dan persetujuan berhasil disiapkan.</b><br>Salin ringkasan di bawah, lalu kirimkan ke WhatsApp resmi IBES STORE / Alusindo. Formulir demo ini belum terhubung ke database.';
- const copy=document.createElement('button');copy.className='btn';copy.type='button';copy.style.marginTop='12px';copy.textContent='SALIN RINGKASAN FORM';
- copy.onclick=()=>{navigator.clipboard.writeText(msg).then(()=>copy.textContent='TERSALIN ✓').catch(()=>alert(msg));};
- box.appendChild(document.createElement('br'));box.appendChild(copy);
- box.dataset.message=msg;
-});
-</script>
-</body></html>
+      <div style="margin-top:24px;background:#fff;border:1px solid var(--line);padding:24px">
+        <div class="kicker">SITE SURVEY POLICY</div>
+        <h3 style="font:26px Georgia;margin:8px 0 12px">Ketentuan Biaya Survey Lokasi</h3>
+        <div class="floor"><strong>JAKARTA & TANGERANG</strong><p><b>FREE / GRATIS.</b> Biaya survey lokasi tidak dikenakan biaya untuk area Jakarta dan Tangerang.</p></div>
+        <div class="floor"><strong>AREA LAINNYA</strong><p>Biaya survey akan diinformasikan berdasarkan jarak, akses lokasi, dan kebutuhan perjalanan. Tim Alusindo akan melakukan konfirmasi terlebih dahulu sebelum survey dijadwalkan.</p></div>
+        <div class="floor"><strong>LUAR KOTA / LUAR PULAU</strong><p>Biaya perjalanan dan kebutuhan survey di luar kota atau luar pulau menjadi tanggung jawab konsumen, berdasarkan estimasi biaya yang disepakati terlebih dahulu.</p></div>
+        <p class="notice">Survey hanya dijadwalkan setelah lokasi, waktu, dan ketentuan biayanya dikonfirmasi bersama konsumen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: PERSIAPAN DATA CHECKOUT & RINGKASAN PAKET -->
+  <section class="section" id="checkout">
+    <div class="wrap">
+      <div class="checkout-wrap">
+        <div class="info-card">
+          <h3>Data yang Perlu Disiapkan saat Checkout</h3>
+          <p style="color:var(--muted); font-size:14px; margin:0;">Saat membuka halaman checkout Lynk.id, Anda akan diminta mengisi <i>Custom Fields</i> singkat berikut:</p>
+          <ul class="checklist">
+            <li><b>Nama Lengkap & Nomor WhatsApp Aktif</b> (untuk koordinasi tim arsitek)</li>
+            <li><b>Lokasi Proyek</b> (Kota / Kabupaten)</li>
+            <li><b>Jenis Bangunan & Rencana Jumlah Lantai</b></li>
+            <li><b>Perkiraan Ukuran Tanah & Estimasi Anggaran</b></li>
+            <li><b>Kebutuhan Ruangan & Gaya Desain yang Diinginkan</b></li>
+          </ul>
+
+          <div class="pdf-bonus">
+            <b>📄 Akses Instan: File PDF Panduan Konsultasi Awal</b>
+            <span>Begitu pembayaran selesai di Lynk.id, sistem otomatis memberikan link unduhan <b>Panduan Konsultasi Awal ALUSINDO (PDF)</b> berisi persiapan brief desain, referensi gaya arsitektur, dan alur tahapan pengerjaan.</span>
+          </div>
+        </div>
+
+        <div class="proposal-card">
+          <div>
+            <h4>Ringkasan Paket & Pembayaran</h4>
+            <div class="proposal-row"><span>3D Facade</span><b>Termasuk</b></div>
+            <div class="proposal-row"><span>3D Animation</span><b>Termasuk</b></div>
+            <div class="proposal-row"><span>Denah per lantai</span><b>Termasuk</b></div>
+            <div class="proposal-row"><span>RAB (Rencana Anggaran Biaya)</span><b>Termasuk</b></div>
+            <div class="proposal-row"><span>PDF Panduan Konsultasi Awal</span><b>Akses Instan</b></div>
+            <div class="proposal-total">
+              <span>Total Biaya Paket</span>
+              <span style="text-align:right;">
+                <span class="strike-box light" style="margin-bottom:4px;">Rp5.000.000</span><br>
+                <span style="color:#9b783f; font-size:22px;">Rp2.000.000</span>
+              </span>
+            </div>
+            <div class="pay-methods">
+              Mendukung Pembayaran Otomatis: <b>QRIS • Virtual Account Bank • GoPay / OVO / DANA</b>
+            </div>
+          </div>
+
+          <div>
+            <a class="btn js-lynk-btn" href="https://lynk.id/ibes-store/57yo135m7oe7" style="width:100%; text-align:center; font-size:16px;">RESERVASI SEKARANG →</a>
+            <p class="notice" style="margin-bottom:0;">Dengan melanjutkan pembayaran di Lynk.id, Anda menyetujui ketentuan paket serta kebijakan survey lokasi ALUSINDO (Gratis Jakarta & Tangerang).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <b>IBES STORE by ALUSINDO</b><br>
+      Architecture • Design • Build<br>
+      <span>Halaman penawaran digital · Pembayaran resmi diproses melalui Lynk.id.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Ganti dengan URL Produk Lynk.id Anda
+    const LINK_LYNK_ID = 'https://lynk.id/ibes-store/57yo135m7oe7';
+
+    // Terapkan link Lynk.id ke tombol checkout final
+    document.querySelectorAll('.js-lynk-btn').forEach(btn => {
+      btn.href = LINK_LYNK_ID;
+      btn.target = '_blank';
+      btn.rel = 'noopener noreferrer';
+    });
+  </script>
+</body>
+</html>
