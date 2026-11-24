@@ -248,15 +248,205 @@
     .visual {
       border: 1px solid var(--line);
       background: #fff;
+      display: flex;
+      flex-direction: column;
     }
 
     .visual img {
       width: 100%;
-      min-height: 220px;
+      height: 310px;
       display: block;
-      object-fit: contain;
-      max-height: 540px;
+      object-fit: cover;
       background: #f0eee9;
+    }
+
+    .visual img.contain-img {
+      object-fit: contain;
+    }
+
+    /* Slider Samping Unlimited (Card 01) */
+    .slider-box {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      overflow: hidden;
+      background: #17191c;
+    }
+
+    .slider-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.38s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .slider-track img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(17, 17, 17, 0.72);
+      color: #fff;
+      font-size: 18px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .slider-btn:hover {
+      background: var(--gold);
+      color: #111;
+      border-color: var(--gold);
+    }
+
+    .slider-btn.prev {
+      left: 12px;
+    }
+
+    .slider-btn.next {
+      right: 12px;
+    }
+
+    .slider-count {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(17, 17, 17, 0.75);
+      color: #e3c58f;
+      font-family: var(--font-title);
+      font-size: 10px;
+      padding: 4px 9px;
+      border-radius: 3px;
+      border: 1px solid rgba(189, 150, 84, 0.4);
+      z-index: 3;
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      padding: 5px 10px;
+      background: rgba(17, 17, 17, 0.55);
+      border-radius: 20px;
+      z-index: 3;
+      max-width: 85%;
+      overflow-x: auto;
+    }
+
+    .slider-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 0;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.45);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .slider-dot.active {
+      background: var(--gold);
+      transform: scale(1.25);
+    }
+
+    /* Video Player Box (Card 04: YouTube / Blogspot / MP4) */
+    .video-box {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      background: #111;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .video-box:hover img {
+      transform: scale(1.03);
+      filter: brightness(0.88);
+    }
+
+    .video-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.22);
+      gap: 10px;
+    }
+
+    .play-circle {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: rgba(201, 59, 43, 0.92);
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .video-box:hover .play-circle {
+      transform: scale(1.1);
+      background: #e03524;
+    }
+
+    .play-circle::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    .play-label {
+      background: rgba(17, 17, 17, 0.8);
+      color: #fff;
+      font-family: var(--font-title);
+      font-size: 10px;
+      letter-spacing: .08em;
+      padding: 5px 10px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .video-box iframe,
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      background: #000;
     }
 
     .visual .cap {
@@ -515,6 +705,12 @@
         grid-template-columns: 1fr;
       }
 
+      .visual img,
+      .slider-box,
+      .video-box {
+        height: 240px;
+      }
+
       .floor {
         grid-template-columns: 1fr;
         gap: 6px;
@@ -585,34 +781,55 @@
       <div class="kicker">2. DESAIN ANDA</div>
       <h2 class="heading">Apa Yang Anda Dapatkan?</h2>
       <div class="grid" style="margin-top:28px">
+        
+        <!-- CARD 01: SLIDER GAMBAR 3D FASAD UNLIMITED -->
         <div class="visual">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3HCLHEy57uCL7F-ouHyuZD8IEFygXKNvx7Mw9jZI4IV1KOza3IJ3Dff4lEX2Nqf58UICJsIQiPsLU5O8kEgQ_1OOCnTFtVwwl-uMvIyIQSkLPiujDkebZ0xWREPHywpFFEfWOG3Pjmb8l7BDIfXkSShSHUomie7IT28mx8BeAGOEh0bZmcp5FVMVq3pY/s1600/Dusk%20Facades_%20Modern%20and%20Classic%20Homes.png" alt="Contoh visual 3D facade rumah modern">
+          <div class="slider-box" id="facadeSlider">
+            <div class="slider-track" id="facadeTrack"></div>
+            <span class="slider-count" id="facadeCount">1 / 1</span>
+            <button type="button" class="slider-btn prev" id="facadePrev" aria-label="Gambar Sebelumnya">‹</button>
+            <button type="button" class="slider-btn next" id="facadeNext" aria-label="Gambar Berikutnya">›</button>
+            <div class="slider-dots" id="facadeDots"></div>
+          </div>
           <div class="cap">
             <b>01 · Gambar 3D Fasad</b>
-            <small>Visualisasi tampilan depan bangunan secara realistis agar Anda dapat melihat gambaran rumah impian sebelum dibangun.</small>
+            <small>Visualisasi tampilan depan bangunan secara realistis agar Anda dapat melihat gambaran rumah impian sebelum dibangun (geser untuk melihat contoh desain lainnya).</small>
           </div>
         </div>
+
+        <!-- CARD 02: DENAH PER LANTAI -->
         <div class="visual">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMQH0pvQnt5NR32aPnui0nPraxpfQNNshENZY22jSTINNIxE_-UAm81MEzPoL1l4P6TXpTOG3KZpE2DyLcdEq7tQOO07eRrG5fKHbhQqKJhHkyVC8vTSCE7Bh8stNyO2iTr5UXvCZMCjDrpG1CrOyAiz1NlHBQB0IL1cYGJBxqhMJQ8WOHLwJcWybTWFw/s1600/Denah%20Per%20lantai.jpg" alt="Contoh denah perlantai">
+          <img class="contain-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMQH0pvQnt5NR32aPnui0nPraxpfQNNshENZY22jSTINNIxE_-UAm81MEzPoL1l4P6TXpTOG3KZpE2DyLcdEq7tQOO07eRrG5fKHbhQqKJhHkyVC8vTSCE7Bh8stNyO2iTr5UXvCZMCjDrpG1CrOyAiz1NlHBQB0IL1cYGJBxqhMJQ8WOHLwJcWybTWFw/s1600/Denah%20Per%20lantai.jpg" alt="Contoh denah perlantai">
           <div class="cap">
-            <b>02 · Gambar Denah Bangunan</b>
+            <b>02 · Gambar Desain Bangunan</b>
             <small>Perencanaan gambar desain sebagai dasar visual dan konsep bangunan sesuai kebutuhan dan keinginan Anda.</small>
           </div>
         </div>
+
+        <!-- CARD 03: RAB FILE -->
         <div class="visual">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9YYWX5I6ABr-5xpnZdaIHUvjXjvoYpbB8ickKgfiJFkLqBwwbgy-e7srdSBvyj6R2ZVotyCVhc7h4OC03u7orDarDsvayjrK8kLAVzQXSY-ZhZ2P4vMhSm8nHTcA2O9NcHbBaOu8a0hKsphNWD5olO8vtUniOdIQNjzD_EUhmcKANPSlW0-X0p5CtZP8/s1600/Spreadsheet%20Cost%20Estimate%20Table%20with%20Blank%20Pricing%20Columns.png" alt="Contoh RAB File">
+          <img class="contain-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9YYWX5I6ABr-5xpnZdaIHUvjXjvoYpbB8ickKgfiJFkLqBwwbgy-e7srdSBvyj6R2ZVotyCVhc7h4OC03u7orDarDsvayjrK8kLAVzQXSY-ZhZ2P4vMhSm8nHTcA2O9NcHbBaOu8a0hKsphNWD5olO8vtUniOdIQNjzD_EUhmcKANPSlW0-X0p5CtZP8/s1600/Spreadsheet%20Cost%20Estimate%20Table%20with%20Blank%20Pricing%20Columns.png" alt="Contoh RAB File">
           <div class="cap">
             <b>03 · RAB File</b>
             <small>Estimasi anggaran pekerjaan berdasarkan desain dan spesifikasi yang disepakati sebagai acuan awal perencanaan biaya pembangunan.</small>
           </div>
         </div>
+
+        <!-- CARD 04: VIDEO ANIMASI 3D FASAD (YOUTUBE / BLOGSPOT) -->
         <div class="visual">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguaxlfwBGrcgJdICXHmwnyA_zlIkrqOgAJZ9JrWlF0o12ya1EqjKXJ8WmWkDDYrghBvGm5sXnpaa840UWO_NXAbo5ow-Gk9LemHtEsEu2HOSb1IquFi411qxkHj3_QCFdfLjpaMzp4Qe_Lli1CzV3HErQIiKudR9tRuUMJvP8w7WX2SCPNl-DA4Z1vYzE/s1600/Elegant%20Mansion%203D%20Animasi%20Promo.png" alt="3D animasi">
+          <div class="video-box" id="animVideoBox" title="Klik untuk memutar video 3D Animasi">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguaxlfwBGrcgJdICXHmwnyA_zlIkrqOgAJZ9JrWlF0o12ya1EqjKXJ8WmWkDDYrghBvGm5sXnpaa840UWO_NXAbo5ow-Gk9LemHtEsEu2HOSb1IquFi411qxkHj3_QCFdfLjpaMzp4Qe_Lli1CzV3HErQIiKudR9tRuUMJvP8w7WX2SCPNl-DA4Z1vYzE/s1600/Elegant%20Mansion%203D%20Animasi%20Promo.png" alt="Thumbnail 3D Animasi Fasad">
+            <div class="video-play-overlay">
+              <div class="play-circle"></div>
+              <span class="play-label">PUTAR VIDEO 3D ANIMASI</span>
+            </div>
+          </div>
           <div class="cap">
             <b>04 · Animasi 3D Fasad</b>
             <small>Visualisasi fasad dalam bentuk animasi sehingga Anda dapat melihat tampilan desain bangunan dari berbagai sudut pandang.</small>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -736,17 +953,143 @@
   </footer>
 
   <script>
-    // Ganti dengan URL Produk Lynk.id Anda
+    // =========================================================================
+    // 1. PENGATURAN LINK CHECKOUT LYNK.ID
+    // =========================================================================
     const LINK_LYNK_ID = 'https://lynk.id/ibesstore/produk-desain-alusindo';
 
-    // Terapkan link Lynk.id ke tombol RESERVASI SEKARANG
+    // =========================================================================
+    // 2. PENGATURAN SLIDER GAMBAR 3D FASAD (TAMBAH URL BLOGSPOT UNLIMITED DI SINI)
+    // =========================================================================
+    const GAMBAR_3D_FASAD = [
+      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3HCLHEy57uCL7F-ouHyuZD8IEFygXKNvx7Mw9jZI4IV1KOza3IJ3Dff4lEX2Nqf58UICJsIQiPsLU5O8kEgQ_1OOCnTFtVwwl-uMvIyIQSkLPiujDkebZ0xWREPHywpFFEfWOG3Pjmb8l7BDIfXkSShSHUomie7IT28mx8BeAGOEh0bZmcp5FVMVq3pY/s1600/Dusk%20Facades_%20Modern%20and%20Classic%20Homes.png',
+      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7nM8U8Werzqw85GtflClRt73aBc5PVTB75MO1GzRoUJGfL8LQPq5sPf_BjvFoPIXa3fNXqjnJOK_3TDkHBmqOWqClQlEs13zHAKUyNtIXMD_Y1_07yvg6zmVNjhpsxxp8-XA7AIW_p9C5npYYak3CuJqQ5mAoGe3Hm__bWIOL_eHn3d5Ckb_QelFRPiY/s1600/Elegant%20Modern-Classic%20House%20at%20Dusk.png'
+      // Tambahkan koma lalu URL gambar Blogspot lainnya di bawah ini tanpa batas:
+      // 'https://blogger.googleusercontent.com/img/.../gambar3.png',
+      // 'https://blogger.googleusercontent.com/img/.../gambar4.png',
+    ];
+
+    // =========================================================================
+    // 3. PENGATURAN VIDEO 3D ANIMASI (BISA LINK YOUTUBE ATAU LINK VIDEO BLOGSPOT/MP4)
+    // =========================================================================
+    // Contoh YouTube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' atau 'https://youtu.be/xxxx'
+    // Contoh Blogspot / MP4 langsung: 'https://blogger.googleusercontent.com/img/b/...' atau 'https://domain.com/video.mp4'
+    const VIDEO_3D_ANIMASI = 'https://www.youtube.com/watch?v=GANTI_DENGAN_ID_VIDEO_YOUTUBE_ANDA';
+
+    // -------------------------------------------------------------------------
+    // LOGIKA SLIDER 3D FASAD
+    // -------------------------------------------------------------------------
+    (function initFacadeSlider() {
+      const track = document.getElementById('facadeTrack');
+      const dotsWrap = document.getElementById('facadeDots');
+      const countEl = document.getElementById('facadeCount');
+      const prevBtn = document.getElementById('facadePrev');
+      const nextBtn = document.getElementById('facadeNext');
+      const sliderBox = document.getElementById('facadeSlider');
+
+      let currentIndex = 0;
+      const total = GAMBAR_3D_FASAD.length;
+
+      GAMBAR_3D_FASAD.forEach((url, idx) => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = `Contoh 3D Fasad ALUSINDO #${idx + 1}`;
+        img.loading = idx === 0 ? 'eager' : 'lazy';
+        track.appendChild(img);
+
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Slide ${idx + 1}`);
+        dot.addEventListener('click', () => goToSlide(idx));
+        dotsWrap.appendChild(dot);
+      });
+
+      function updateSliderUI() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        countEl.textContent = `${currentIndex + 1} / ${total}`;
+        const dots = dotsWrap.querySelectorAll('.slider-dot');
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+        if (total <= 1) {
+          prevBtn.style.display = 'none';
+          nextBtn.style.display = 'none';
+          dotsWrap.style.display = 'none';
+        }
+      }
+
+      function goToSlide(index) {
+        currentIndex = (index + total) % total;
+        updateSliderUI();
+      }
+
+      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+      // Dukungan swipe sentuh di HP
+      let startX = 0;
+      sliderBox.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+
+      sliderBox.addEventListener('touchend', e => {
+        const diffX = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diffX) > 40) {
+          goToSlide(diffX > 0 ? currentIndex + 1 : currentIndex - 1);
+        }
+      }, { passive: true });
+
+      updateSliderUI();
+    })();
+
+    // -------------------------------------------------------------------------
+    // LOGIKA PEMUTAR VIDEO YOUTUBE / BLOGSPOT (CARD 04)
+    // -------------------------------------------------------------------------
+    (function initVideoPlayer() {
+      const videoBox = document.getElementById('animVideoBox');
+      if (!videoBox) return;
+
+      function extractYouTubeId(url) {
+        const regExp = /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = url.match(regExp);
+        return match ? match[1] : null;
+      }
+
+      videoBox.addEventListener('click', function() {
+        if (this.dataset.playing === 'true') return;
+        this.dataset.playing = 'true';
+        this.style.cursor = 'default';
+
+        const ytId = extractYouTubeId(VIDEO_3D_ANIMASI);
+        if (ytId) {
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0`;
+          iframe.title = 'Animasi 3D Fasad ALUSINDO';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          this.innerHTML = '';
+          this.appendChild(iframe);
+        } else {
+          // Video langsung dari Blogspot (blogger.googleusercontent.com/img/b/...) atau file .mp4
+          const video = document.createElement('video');
+          video.src = VIDEO_3D_ANIMASI;
+          video.controls = true;
+          video.autoplay = true;
+          video.playsInline = true;
+          this.innerHTML = '';
+          this.appendChild(video);
+        }
+      });
+    })();
+
+    // -------------------------------------------------------------------------
+    // TOMBOL CHECKOUT LYNK.ID & SMOOTH SCROLL
+    // -------------------------------------------------------------------------
     document.querySelectorAll('.js-lynk-btn').forEach(btn => {
       btn.href = LINK_LYNK_ID;
       btn.target = '_blank';
       btn.rel = 'noopener noreferrer';
     });
 
-    // Smooth scroll untuk tombol navigasi antar bagian (#paket dan #checkout)
     document.querySelectorAll('.js-scroll').forEach(link => {
       link.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
