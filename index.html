@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design Proposal by ALUSINDO | IBES STORE</title>
   
-  <!-- Import Google Fonts: Michroma (Judul) & Montserrat (Konten) -->
+  <!-- Import Google Fonts: Michroma (Judul) & Montserrat (Konten + Angka Harga) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -128,7 +128,7 @@
       transform: translateY(-1px);
     }
 
-    /* Wrapper & Efek Harga Coret Silang (X Merah) */
+    /* Wrapper & Efek Harga Coret Silang (Font Montserrat agar angka jelas) */
     .hero-offer {
       display: inline-flex;
       flex-direction: column;
@@ -162,15 +162,16 @@
     }
 
     .strike-box {
-      font-family: var(--font-title);
+      font-family: var(--font-body);
+      font-weight: 700;
       position: relative;
       display: inline-block;
       padding: 4px 12px;
-      border: 1px dashed rgba(255, 255, 255, 0.35);
+      border: 1px dashed rgba(255, 255, 255, 0.4);
       border-radius: 4px;
-      color: #b5b5b5;
-      font-size: 14px;
-      letter-spacing: .03em;
+      color: #d0d0d0;
+      font-size: 15px;
+      letter-spacing: .02em;
     }
 
     .strike-box::before,
@@ -180,10 +181,10 @@
       left: -4px;
       right: -4px;
       top: 50%;
-      height: 2.5px;
+      height: 2px;
       background: #ff473d;
       border-radius: 2px;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
     }
 
     .strike-box::before {
@@ -195,17 +196,21 @@
     }
 
     .strike-box.light {
-      border-color: rgba(23, 25, 28, 0.3);
-      color: #777;
-      font-size: 11px;
+      border-color: rgba(23, 25, 28, 0.35);
+      color: #555;
+      font-size: 13px;
+      font-weight: 700;
       padding: 2px 8px;
     }
 
     .hero-offer .btn {
+      font-family: var(--font-body);
+      font-weight: 800;
       margin-top: 0;
       width: 100%;
       text-align: center;
-      font-size: 13.5px;
+      font-size: 17px;
+      letter-spacing: .02em;
       box-shadow: 0 8px 20px rgba(189, 150, 84, 0.25);
     }
 
@@ -503,12 +508,13 @@
     }
 
     .price {
-      font-family: var(--font-title);
-      font-weight: 400;
-      font-size: clamp(24px, 3.4vw, 38px);
-      line-height: 1.2;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: clamp(32px, 4.5vw, 48px);
+      line-height: 1.15;
       color: #e6c78f;
       margin-top: 10px;
+      letter-spacing: -0.01em;
     }
 
     .pricebox p {
@@ -649,6 +655,11 @@
       gap: 15px;
     }
 
+    .price-num {
+      font-family: var(--font-body);
+      font-weight: 800;
+    }
+
     .pay-methods {
       font-size: 12.5px;
       color: var(--muted);
@@ -735,6 +746,10 @@
         font-size: 12px;
         padding: 14px 18px;
       }
+
+      .hero-offer .btn {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -756,9 +771,9 @@
       <div class="hero-offer">
         <div class="offer-top">
           <span class="offer-badge">PROMO TERBATAS</span>
-          <span class="strike-box">Rp 5.000.000,00</span>
+          <span class="strike-box" style="font-size: 30px;">Rp 5.000.000</span>
         </div>
-        <a class="btn js-scroll" href="#paket">Rp 2.000.000,00 →</a>
+        <a class="btn js-scroll" href="#paket" style="font-size:30px">Rp 2.000.000 →</a>
       </div>
     </div>
   </header>
@@ -873,9 +888,9 @@
         <div>
           <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:4px;">
             <span class="offer-badge">HEMAT 3 JUTA</span>
-            <span class="strike-box" style="font-size: 16px;">Rp 5.000.000</span>
+            <span class="strike-box" style="font-size: 30px;">Rp 5.000.000</span>
           </div>
-          <div class="price">Rp2.000.000</div>
+          <div class="price" style="margin-top: 2px; font-size: 30px">Rp 2.000.000</div>
           <p>Anda sudah dapat memulai langkah pertama untuk melihat seperti apa gambaran rumah impian Anda sebelum dibangun.</p>
           <a class="btn js-scroll" href="#checkout">RENCANAKAN BANGUNAN ANDA →</a>
         </div>
@@ -926,8 +941,8 @@
             <div class="proposal-total">
               <span>Total Biaya Paket</span>
               <span style="text-align:right;">
-                <span class="strike-box light" style="margin-bottom:4px;">Rp5.000.000</span><br>
-                <span style="color:#9b783f; font-size:17px;">Rp2.000.000</span>
+                <span class="strike-box light" style="margin-bottom:4px;font-size:30px;">Rp5.000.000</span><br>
+                <span class="price-num" style="color:#9b783f; font-size:30px;">Rp2.000.000</span>
               </span>
             </div>
             <div class="pay-methods">
@@ -963,7 +978,8 @@
     // =========================================================================
     const GAMBAR_3D_FASAD = [
       'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3HCLHEy57uCL7F-ouHyuZD8IEFygXKNvx7Mw9jZI4IV1KOza3IJ3Dff4lEX2Nqf58UICJsIQiPsLU5O8kEgQ_1OOCnTFtVwwl-uMvIyIQSkLPiujDkebZ0xWREPHywpFFEfWOG3Pjmb8l7BDIfXkSShSHUomie7IT28mx8BeAGOEh0bZmcp5FVMVq3pY/s1600/Dusk%20Facades_%20Modern%20and%20Classic%20Homes.png',
-      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7nM8U8Werzqw85GtflClRt73aBc5PVTB75MO1GzRoUJGfL8LQPq5sPf_BjvFoPIXa3fNXqjnJOK_3TDkHBmqOWqClQlEs13zHAKUyNtIXMD_Y1_07yvg6zmVNjhpsxxp8-XA7AIW_p9C5npYYak3CuJqQ5mAoGe3Hm__bWIOL_eHn3d5Ckb_QelFRPiY/s1600/Elegant%20Modern-Classic%20House%20at%20Dusk.png'
+      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipNlJ2HcnecQAkO_K_TPYDe3w5hnbWH98THVwJyvn6HZUK5uxIaT-qzN9sk_hDRsOfrbUkNepZmS6p1RWtzKPmLu6y_bl19mYzGjQrLlJrnvGWoSDxYhyphenhyphen3oHFnUqz57ato_okjsyFK5TCbSrGQ3GHRyjKWNTTBWWOFScNxzK7K-fw9wmXnuvNwVJrK1hw/s1600/Screenshot%202026-11-24%20085447.png',
+      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggE8uuYSwoqVbYyhCQQbCU9AWsUP1vSxL53RgIiiRKLfDn9xNgw5kIPOSMOb2NXDrlrF4zgyQ_Lj332-MzYvyyKUpvZ9rArlh8blSHaNJ8riaGUVvgxhmbnTpCu3RcjIgPHO5LgnqmP5of3UGw-muFlT2Otm74HwsXAPOjBC6h6kCqEoN2jF6vOs-02ng/s1600/Screenshot%202026-11-24%20105213.png'
       // Tambahkan koma lalu URL gambar Blogspot lainnya di bawah ini tanpa batas:
       // 'https://blogger.googleusercontent.com/img/.../gambar3.png',
       // 'https://blogger.googleusercontent.com/img/.../gambar4.png',
@@ -972,9 +988,7 @@
     // =========================================================================
     // 3. PENGATURAN VIDEO 3D ANIMASI (BISA LINK YOUTUBE ATAU LINK VIDEO BLOGSPOT/MP4)
     // =========================================================================
-    // Contoh YouTube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' atau 'https://youtu.be/xxxx'
-    // Contoh Blogspot / MP4 langsung: 'https://blogger.googleusercontent.com/img/b/...' atau 'https://domain.com/video.mp4'
-    const VIDEO_3D_ANIMASI = 'https://www.youtube.com/watch?v=GANTI_DENGAN_ID_VIDEO_YOUTUBE_ANDA';
+    const VIDEO_3D_ANIMASI = 'https://www.youtube.com/watch?v=mCf363yxgJ4';
 
     // -------------------------------------------------------------------------
     // LOGIKA SLIDER 3D FASAD
